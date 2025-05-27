@@ -5,3 +5,4 @@ scikit-learn
 konlpy 
 pandas
 beautifulsoup4
+openpyxl
