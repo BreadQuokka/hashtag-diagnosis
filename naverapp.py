@@ -7,8 +7,8 @@ import io
 st.title("✅ 해시태그 분류 실패 진단기")
 st.image("fr19.png", use_container_width=True)
 
-st.write("#### 해시태그가 누락된 공고 HTML 파일 업로드")
-title_file = st.file_uploader("해시태그 누락 공고 HTML 파일", type=["html", "htm"])
+st.write("#### 정책지원금 공고 HTML 파일 업로드")
+title_file = st.file_uploader("정책지원금 공고 HTML 파일", type=["html", "htm"])
 
 st.write("#### 현재 사용 중인 해시태그 사전 (엑셀) 업로드")
 keyword_file = st.file_uploader("해시태그 기준표 파일", type=["xlsx"])
