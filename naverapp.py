@@ -5,11 +5,22 @@ from bs4 import BeautifulSoup
 
 st.title("✅ 해시태그 분류 실패 진단기")
 st.image("fr19.png", use_container_width=True)
+
 st.write("#### 해시태그가 누락된 공고 HTML 파일 업로드")
 title_file = st.file_uploader("해시태그 누락 공고 HTML 파일", type=["html", "htm"])
 
 st.write("#### 현재 사용 중인 해시태그 사전 (엑셀) 업로드")
 keyword_file = st.file_uploader("해시태그 기준표 파일", type=["xlsx"])
+
+# 안내 문구 + 기본 다운로드 제공
+st.caption("💡 해시태그 사전 파일이 없으신가요?")
+with open("default_hashtag_2025.xlsx", "rb") as file:
+    st.download_button(
+        label="📥 2025 해시태그 분류기준 적용",
+        data=file,
+        file_name="2025_해시태그_분류기준.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
 
 if title_file and keyword_file:
     # HTML 파싱
