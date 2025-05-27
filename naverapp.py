@@ -14,7 +14,7 @@ keyword_file = st.file_uploader("해시태그 기준표 파일", type=["xlsx"])
 
 # 안내 문구 + 기본 다운로드 제공
 st.caption("💡 해시태그 사전 파일이 없으신가요?")
-with open("default_hashtag_2025.xlsx", "rb") as file:
+with open("해쉬태그.xlsx", "rb") as file:
     st.download_button(
         label="📥 2025 해시태그 분류기준 적용",
         data=file,
