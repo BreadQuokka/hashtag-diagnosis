@@ -15,7 +15,8 @@ keyword_file = st.file_uploader("해시태그 기준표 파일", type=["xlsx"])
 
 st.caption("💡 해시태그 사전 파일이 없으신가요?")
 if st.button("📥 2025 해시태그 분류기준 적용"):
-    keyword_file = open("tag_default.xlsx", "rb")
+    keyword_file = open("hashtag_default.xlsx", "rb")
+    st.success("✅ 2025 해시태그 기준파일 업로드 완료!")
 
 if title_file and keyword_file:
     # HTML 파싱
