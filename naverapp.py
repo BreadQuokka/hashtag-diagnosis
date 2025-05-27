@@ -4,7 +4,7 @@ import re
 from bs4 import BeautifulSoup
 
 st.title("✅ 해시태그 분류 실패 진단기")
-st.image("/Users/user/Documents/naver_subvention_streamlit/fr19.png", use_container_width=True)
+st.image("fr19.png", use_container_width=True)
 st.write("#### 해시태그가 누락된 공고 HTML 파일 업로드")
 title_file = st.file_uploader("해시태그 누락 공고 HTML 파일", type=["html", "htm"])
 
