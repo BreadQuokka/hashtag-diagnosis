@@ -77,9 +77,14 @@ if title_file and keyword_file:
     st.success(f"총 {len(df_result)}건 진단 완료")
     st.dataframe(df_result)
 
+    # CSV 다운로드 버퍼 처리 (한글 깨짐 방지)
+    csv_buffer = io.BytesIO()
+    csv_buffer.write(df_result.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig'))
+    csv_buffer.seek(0)
+
     st.download_button(
         label="📥 결과 CSV 다운로드",
-        data=df_result.to_csv(index=False, encoding='utf-8-sig'),
+        data=csv_buffer,
         file_name='해시태그_진단결과.csv',
         mime='text/csv'
     )
