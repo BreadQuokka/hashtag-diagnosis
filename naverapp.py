@@ -74,8 +74,12 @@ if title_file and keyword_file:
         })
 
     df_result = pd.DataFrame(results)
-    st.success(f"총 {len(df_result)}건 진단 완료")
+    # st.success(f"총 {len(df_result)}건 진단 완료")
+    total_items = len(items)  # 전체 공고 수
+    missing_hashtag_count = len(df_result)  # 해시태그가 없는 공고 수
+    st.success(f"전체 {total_items}건 중 해시태그가 누락된 {missing_hashtag_count}건 진단 완료")
     st.dataframe(df_result)
+
 
     # CSV 다운로드 버퍼 처리 (한글 깨짐 방지)
     csv_buffer = io.BytesIO()
